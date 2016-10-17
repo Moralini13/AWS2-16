@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sudoku</title>
+</head>
+<style type="text/css">
+	
+	h1{
+		text-align: center;
+		color: red;
+		font-family: verdana;
+		font-size: 20px;
+	}
+
+	table {
+  		margin: auto;
+  		color: red;	
+  		
+	}
+	
+	input{
+		
+		width: 22px;
+		height: 22px;
+		padding: 10px;
+		text-align: center;
+
+	}
+
+	td {
+	  height:30px;
+	  width:30px;
+	  border: 1px solid;
+	  text-align:center;
+	}
+
+	td:nth-child(3n) {
+	  border-right:solid black;
+	}
+	td:nth-child(9n) {
+	  border-right: transparent;
+	}
+
+	tr:first-child {
+	  border-top:solid black;
+	}
+
+	tr:nth-child(3n) td {
+	  border-bottom:solid black;
+	}
+
+	tr:nth-child(9n) td {
+	  border-bottom:transparent;
+	}
+
+
+</style>
+<body>
+	
+	<table>
+	{% set i=1 %}
+		{% set j=1 %}
+		
+
+		{% for i in range(9) %}
+			<tr>
+				{% for j in range(9) %}		
+					{% set  l=(j+1)+(i*9)%}
+					
+					<td> {{l}} </td>
+					
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

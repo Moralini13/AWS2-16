@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calendario</title>
+</head>
+
+<style type="text/css">
+	
+	
+	#calendario{
+	  
+	  border: 2px solid red;
+	  font-family: verdana;
+	  width: 100%;
+	  height: 60%;
+
+ 	 }
+
+	#calendario td{
+	  
+	  border: 2px solid red;
+	  text-align: center;
+	  
+ 	 }
+  
+    #calendario tr{
+	  
+	  border: 2px solid red;
+	  text-align: center;
+	  
+ 	 }
+
+	#calendario .hoy {
+			background-color: yellow;
+	}
+
+
+
+
+</style>
+
+<body>
+
+	<h1>Calendario con JINJA2</h1>
+		
+	<table id="calendario" cellspacing="0">
+		{% set i=1 %}
+		{% set j=1 %}
+		
+
+		{% for i in range(5) %}
+			<tr>
+				{% for j in range(7) %}		
+					{% set  l=(j+1)+(i*7)%}
+					{% if l <= 31 %}
+
+					<td> {{l}} </td>
+					{% endif %}
+				{% endfor %}
+			</tr>
+		{% endfor %}
+
+	</table>
+
+
+</body>
+</html>
